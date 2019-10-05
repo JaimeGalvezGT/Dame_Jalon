@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="combo_horario">
+        <item>1:00 A.M.</item>
+        <item>2:00 A.M.</item>
+        <item>3:00 A.M.</item>
+        <item>4:00 A.M.</item>
+        <item>5:00 A.M.</item>
+        <item>6:00 A.M.</item>
+        <item>7:00 A.M.</item>
+        <item>8:00 A.M.</item>
+        <item>9:00 A.M.</item>
+        <item>10:00 A.M.</item>
+        <item>11:00 A.M.</item>
+        <item>12:00 P.M.</item>
+        <item>1:00 P.M.</item>
+        <item>2:00 P.M.</item>
+        <item>3:00 P.M.</item>
+        <item>4:00 P.M.</item>
+        <item>5:00 P.M.</item>
+        <item>6:00 P.M.</item>
+        <item>7:00 P.M.</item>
+        <item>8:00 P.M.</item>
+        <item>9:00 P.M.</item>
+        <item>10:00 P.M.</item>
+        <item>11:00 P.M.</item>
+        <item>0:00 A.M.</item>
+
+
+    </string-array>
+
+</resources>
