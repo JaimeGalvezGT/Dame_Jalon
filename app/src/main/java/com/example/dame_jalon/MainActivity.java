@@ -54,12 +54,9 @@ public class MainActivity extends AppCompatActivity {
     public usuario validarLogin(){
         //Variable que almacenará el resultado de la consulta
         usuario usuario = null;
-        //Asignamos el driver de conexion
-        String driver = "com.mysql.jdbc.Driver";
         try{
-            //Cargamos el driver con el conector jdbc
-            Class.forName(driver).newInstance();
-            usuario user = new usuario(txtUsuario.getText().toString(), txtPassword.getText().toString(), "", "","", 0, 0);
+
+            usuario user = new usuario( 0, "", "", txtUsuario.getText().toString(),txtPassword.getText().toString(), 0, 0);
             usuario = new Login().execute(user).get();
         } catch(Exception ex){
             Toast.makeText(MainActivity.this, "Error al conectarse a la BD" + ex.getMessage(), Toast.LENGTH_LONG).show();

@@ -2,7 +2,7 @@ package com.example.dame_jalon;
 
 public class usuario {
     //Atributos de la clase
-    private static int carne;
+    private  int carne;
     private String nombre;
     private String apellido;
     private String email;
@@ -22,13 +22,14 @@ public class usuario {
     }
 
     //Constructor sin parametros
-    public usuario(String s, String nombre, String apellido, String email, String password, int id_rol, int estado) {
+    public usuario() {
 
     }
 
     //Metodos gets y sets
 
-    public static int getCarne() {
+
+    public int getCarne() {
         return carne;
     }
 
