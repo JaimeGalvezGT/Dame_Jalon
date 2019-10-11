@@ -23,63 +23,47 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         txtUsuario = findViewById(R.id.txtCorreo);
         txtPassword = findViewById(R.id.txtPassword);
         btnIngresar = findViewById(R.id.btnIngresar);
         txtRecuperar = findViewById(R.id.txtRecuperar);
         txtRegistrar = findViewById(R.id.registrar);
 
-
         btnIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-                String usuario = txtUsuario.getText().toString();
-                String password = txtPassword.getText().toString();
-
-
-                if(usuario.equals("galvezjaime419@gmail.com") && password.equals("admin")){
-
-                    Intent navegacion = new Intent(MainActivity.this, menu.class);
-                    startActivity(navegacion);
-
+                Intent navegacion = new Intent(MainActivity.this, menu.class);
+                usuario user = validarLogin();
+                if(user != null){
+                    if(user.getFK_estado() == 0){
+                        Toast.makeText(MainActivity.this, "Usuario inactivo", Toast.LENGTH_LONG).show();
+                    } else if(user.getFK_rol() == 1 && user.getFK_estado() == 1){
+                        startActivity(navegacion);
+                    } else if(user.getFK_rol() == 2 && user.getFK_estado() == 1){
+                        startActivity(navegacion);
+                    }
+                } else{
+                    Toast.makeText(MainActivity.this, "Usuario y/o contraseña incorrectos", Toast.LENGTH_LONG).show();
                 }
-
-                else {
-                    Toast msjError = Toast.makeText(getApplicationContext(), "Usuario o Contraseña Incorrectos", Toast.LENGTH_SHORT);
-                    msjError.setGravity(Gravity.CENTER, 0, 0);
-                    msjError.show();
-                }
-
-
             }
         });
 
-        txtRecuperar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    }
 
-                Intent navegacion2 = new Intent(MainActivity.this, recuperar.class);
-                startActivity(navegacion2);
-
-            }
-        });
-
-        txtRegistrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent navegacion3 = new Intent(MainActivity.this, registrar.class);
-                startActivity(navegacion3);
-
-            }
-        });
-
-
-
-
-
+    //Funcion que establece la conexion con la base de datos y retorna un objeto de tipo usuario
+    public usuario validarLogin(){
+        //Variable que almacenará el resultado de la consulta
+        usuario usuario = null;
+        //Asignamos el driver de conexion
+        String driver = "com.mysql.jdbc.Driver";
+        try{
+            //Cargamos el driver con el conector jdbc
+            Class.forName(driver).newInstance();
+            usuario user = new usuario(txtUsuario.getText().toString(), txtPassword.getText().toString(), "", "","", 0, 0);
+            usuario = new Login().execute(user).get();
+        } catch(Exception ex){
+            Toast.makeText(MainActivity.this, "Error al conectarse a la BD" + ex.getMessage(), Toast.LENGTH_LONG).show();
+        }
+        return usuario;
     }
 }
