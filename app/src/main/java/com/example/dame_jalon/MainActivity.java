@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText txtPassword;
     private TextView txtRecuperar;
     private TextView txtRegistrar;
+    private Button button3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,16 @@ public class MainActivity extends AppCompatActivity {
         btnIngresar = findViewById(R.id.btnIngresar);
         txtRecuperar = findViewById(R.id.txtRecuperar);
         txtRegistrar = findViewById(R.id.registrar);
+        button3 = findViewById(R.id.button3);
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent navegacion = new Intent(MainActivity.this, registrar.class);
+                startActivity(navegacion);
+            }
+        });
+
 
         btnIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
