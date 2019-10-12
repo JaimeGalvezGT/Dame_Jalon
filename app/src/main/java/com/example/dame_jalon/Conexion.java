@@ -10,10 +10,9 @@ public class Conexion {
     //Atributos de la clase
     private Connection conn = null;
 
-
     private String driver = "com.mysql.jdbc.Driver";
-    private String host = "172.24.4.87";
-    private String port = "3307";
+    private String host = "192.168.1.3";
+    private String port = "3306";
     private String userName = "root";
     private String password = "admon";
     private String dbName = "damejalon";
