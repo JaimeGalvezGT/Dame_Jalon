@@ -46,9 +46,9 @@ public class Login extends AsyncTask<usuario, Void, usuario> {
             Log.d("Error", ex.getMessage());
         }
         finally
-        {
-            try
-            {
+                {
+                    try
+                    {
                 if (conn!=null) {
                     st.close();
                     rs.close();

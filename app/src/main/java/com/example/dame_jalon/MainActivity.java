@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText txtUsuario;
     private EditText txtPassword;
     private TextView txtRecuperar;
-    private TextView txtRegistrar;
     private Button button3;
 
     @Override
@@ -28,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         txtPassword = findViewById(R.id.txtPassword);
         btnIngresar = findViewById(R.id.btnIngresar);
         txtRecuperar = findViewById(R.id.txtRecuperar);
-        txtRegistrar = findViewById(R.id.registrar);
         button3 = findViewById(R.id.button3);
 
         button3.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent navegacion = new Intent(MainActivity.this, menu.class);
                 usuario user = validarLogin();
+
+                if (txtUsuario.equals("") || txtPassword.equals("")){
+                    Toast.makeText(MainActivity.this, "Complete los campos", Toast.LENGTH_LONG).show();
+                }
                 if(user != null){
                     if(user.getFK_estado() == 0){
                         Toast.makeText(MainActivity.this, "Usuario inactivo", Toast.LENGTH_LONG).show();
