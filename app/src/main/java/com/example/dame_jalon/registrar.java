@@ -25,6 +25,8 @@ public class registrar extends AppCompatActivity {
     EditText editTextApellido;
     EditText editTextEmail;
     EditText editTextPassword;
+    EditText editTextDireccion;
+    EditText editTextTelefono;
     private Connection conn;
     private Statement st = null;
 
@@ -38,12 +40,14 @@ public class registrar extends AppCompatActivity {
         editTextApellido = findViewById(R.id.editTextApellido2);
         editTextEmail = findViewById(R.id.editTextEmail2);
         editTextPassword = findViewById(R.id.txtPassword4);
+        editTextDireccion = findViewById(R.id.editTextDirección);
+        editTextTelefono = findViewById(R.id.ediTextTelefono);
         btnIngresar2 = findViewById(R.id.btnIngresar2);
 
         btnIngresar2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (editTextCarne.getText().toString().isEmpty() && editTextNombre.getText().toString().isEmpty() && editTextApellido.getText().toString().isEmpty() && editTextEmail.getText().toString().isEmpty() && editTextPassword.getText().toString().isEmpty()) {
+                if (editTextCarne.getText().toString().isEmpty() && editTextNombre.getText().toString().isEmpty() && editTextApellido.getText().toString().isEmpty() && editTextEmail.getText().toString().isEmpty() && editTextPassword.getText().toString().isEmpty() && editTextDireccion.getText().toString().isEmpty() && editTextDireccion.getText().toString().isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Todos los campos vacÃ­os, por favor ingrese los datos requeridos", Toast.LENGTH_LONG).show();
                 } else {
                     AgregarRegistro();
@@ -52,6 +56,8 @@ public class registrar extends AppCompatActivity {
                     editTextApellido.setText("");
                     editTextEmail.setText("");
                     editTextPassword.setText("");
+                    editTextDireccion.setText("");
+                    editTextTelefono.setText("");
 
 
                 }
@@ -63,7 +69,7 @@ public class registrar extends AppCompatActivity {
     }
     public Connection conexionBD(){
         Connection conexion = null;
-        String host = "192.168.1.38";
+        String host = "172.24.4.183";
         String port = "3306";
         String dbName = "damejalon";
         String userName = "root";
@@ -85,7 +91,7 @@ public class registrar extends AppCompatActivity {
     public void AgregarRegistro(){
         try {
 
-            PreparedStatement pst = conexionBD().prepareStatement("insert into usuario(carne, nombre, apellido, email, password, id_rol, estado ) values('" + Integer.parseInt(editTextCarne.getText().toString()) + "', '" + editTextNombre.getText().toString()+ "', '" + editTextApellido.getText().toString() + "', '" +  editTextEmail.getText().toString() + "', " +  editTextPassword.getText().toString() + ", 1, 1)");
+            PreparedStatement pst = conexionBD().prepareStatement("insert into usuario(carne, nombre, apellido, email, password, direccion, telefono, id_rol, estado ) values(" + Integer.parseInt(editTextCarne.getText().toString()) + ", '" + editTextNombre.getText().toString()+ "', '" + editTextApellido.getText().toString() + "', '" +  editTextEmail.getText().toString() + "', '" +  editTextPassword.getText().toString()+ "', '" +  editTextDireccion.getText().toString()+ "', " +  Integer.parseInt(editTextTelefono.getText().toString()) + ", 1, 1)");
             pst.executeUpdate();
 
             Toast.makeText(getApplicationContext(),"REGISTRO EXITOSO",Toast.LENGTH_SHORT).show();
@@ -101,7 +107,7 @@ public class registrar extends AppCompatActivity {
             Connection conn;
             Conexion newConexion = new Conexion();
             conn = newConexion.connect();
-            String sql = "insert into usuario(carne, password, nombre, apellido, email, password, id_rol, estado ) values('" + Integer.parseInt(editTextCarne.getText().toString()) + "', '" + editTextNombre.getText().toString()+ "', '" + editTextApellido.getText().toString() + "', '" +  editTextEmail.getText().toString() + "', " +  editTextPassword.getText().toString() + ", 1, 1)";
+            String sql = "insert into usuario(carne, password, nombre, apellido, email, password, direccion, telefono, id_rol, estado ) values('" + Integer.parseInt(editTextCarne.getText().toString()) + "', '" + editTextNombre.getText().toString()+ "', '" + editTextApellido.getText().toString() + "', '" +  editTextEmail.getText().toString() + "', '" +  editTextPassword.getText().toString() + "', '" + editTextDireccion.getText().toString() + "', '"+ Integer.parseInt(editTextTelefono.getText().toString())+ ", 1, 1)";
             Statement pst = conn.createStatement();
             pst = conexionBD().createStatement();
             int resultado = pst.executeUpdate(sql);

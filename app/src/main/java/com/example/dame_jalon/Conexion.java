@@ -12,7 +12,7 @@ public class Conexion {
 
 
     private String driver = "com.mysql.jdbc.Driver";
-    private String host = "192.168.1.38";
+    private String host = "172.24.4.183";
     private String port = "3306";
     private String userName = "root";
     private String password = "admon";
