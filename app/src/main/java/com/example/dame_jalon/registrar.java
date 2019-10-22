@@ -69,7 +69,7 @@ public class registrar extends AppCompatActivity {
     }
     public Connection conexionBD(){
         Connection conexion = null;
-        String host = "172.24.4.183";
+        String host = "192.168.1.27";
         String port = "3306";
         String dbName = "damejalon";
         String userName = "root";
@@ -100,26 +100,6 @@ public class registrar extends AppCompatActivity {
         }
     }
 
-
-    public void AgregarRegistroo(){
-        try {
-
-            Connection conn;
-            Conexion newConexion = new Conexion();
-            conn = newConexion.connect();
-            String sql = "insert into usuario(carne, password, nombre, apellido, email, password, direccion, telefono, id_rol, estado ) values('" + Integer.parseInt(editTextCarne.getText().toString()) + "', '" + editTextNombre.getText().toString()+ "', '" + editTextApellido.getText().toString() + "', '" +  editTextEmail.getText().toString() + "', '" +  editTextPassword.getText().toString() + "', '" + editTextDireccion.getText().toString() + "', '"+ Integer.parseInt(editTextTelefono.getText().toString())+ ", 1, 1)";
-            Statement pst = conn.createStatement();
-            pst = conexionBD().createStatement();
-            int resultado = pst.executeUpdate(sql);
-            if (resultado == 1) {
-                Toast.makeText(registrar.this, "REGISTRO EXITOSO", Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(registrar.this, "FALLO AL REGISTRAR", Toast.LENGTH_LONG).show();
-            }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
-    }
 
 
 

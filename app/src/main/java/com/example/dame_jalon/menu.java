@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class menu extends AppCompatActivity {
 
@@ -39,7 +40,7 @@ public class menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent navegacion2 = new Intent(menu.this, viajar.class);
+                Intent navegacion2 = new Intent(menu.this, verJalones.class);
                 startActivity(navegacion2);
 
             }

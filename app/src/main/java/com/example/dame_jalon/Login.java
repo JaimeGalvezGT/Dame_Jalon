@@ -18,7 +18,7 @@ public class Login extends AsyncTask<usuario, Void, usuario> {
 
     @Override
     protected usuario doInBackground(usuario... datos) {
-        String sql = "select carne, nombre, apellido, email, password, id_rol, estado from usuario where email = '"+datos[0].getEmail()+"' and password = '"+datos[0].getPassword() + "'";
+        String sql = "select carne, nombre, apellido, email, password, direccion, telefono, id_rol, estado from usuario where email = '"+datos[0].getEmail()+"' and password = '"+datos[0].getPassword() + "'";
         /*String host = "192.168.1.3";
         String port = "3306";
         String dbName = "damejalon";
@@ -39,7 +39,7 @@ public class Login extends AsyncTask<usuario, Void, usuario> {
                 do
                 {
 
-                    columnas = new usuario(rs.getInt("carne"), rs.getString("nombre"), rs.getString("apellido"), rs.getString("email"), rs.getString("password"), rs.getInt("id_rol"), rs.getInt("estado"));
+                    columnas = new usuario(rs.getInt("carne"), rs.getString("nombre"), rs.getString("apellido"), rs.getString("email"), rs.getString("password"), rs.getString("direccion"), rs.getString("telefono"), rs.getInt("id_rol"), rs.getInt("estado"));
                 }while(rs.next());
             }
         } catch (SQLException ex) {

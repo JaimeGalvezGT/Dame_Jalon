@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
                     if(user.getFK_estado() == 0){
                         Toast.makeText(MainActivity.this, "Usuario inactivo", Toast.LENGTH_LONG).show();
                     } else if(user.getFK_rol() == 1 && user.getFK_estado() == 1){
+
                         startActivity(navegacion);
                     } else if(user.getFK_rol() == 2 && user.getFK_estado() == 1){
                         startActivity(navegacion);
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         usuario usuario = null;
         try{
 
-            usuario user = new usuario( 0, "", "", txtUsuario.getText().toString(),txtPassword.getText().toString(), 0, 0);
+            usuario user = new usuario( 0, "", "", txtUsuario.getText().toString(),txtPassword.getText().toString(), "", "", 0, 0);
             usuario = new Login().execute(user).get();
         } catch(Exception ex){
             Toast.makeText(MainActivity.this, "Error al conectarse a la BD" + ex.getMessage(), Toast.LENGTH_LONG).show();
