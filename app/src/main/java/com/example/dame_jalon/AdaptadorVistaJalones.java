@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -36,7 +35,7 @@ class AdaptadorVistaJalones extends RecyclerView.Adapter<AdaptadorVistaJalones.M
             nombre = itemView.findViewById(R.id.nombre);
             direccion = itemView.findViewById(R.id.direccion);
             telefono = itemView.findViewById(R.id.telefono);
-            dia = itemView.findViewById(R.id.dia);
+            dia = itemView.findViewById(R.id.email);
             hora = itemView.findViewById(R.id.hora);
         }
 

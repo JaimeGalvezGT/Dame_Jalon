@@ -40,7 +40,7 @@ public class menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent navegacion2 = new Intent(menu.this, verJalones.class);
+                Intent navegacion2 = new Intent(menu.this, verNotificaciones.class);
                 startActivity(navegacion2);
 
             }

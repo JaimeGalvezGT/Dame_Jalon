@@ -3,13 +3,9 @@ package com.example.dame_jalon;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.sql.Connection;
@@ -29,7 +25,7 @@ public class publicar_viaje extends AppCompatActivity {
         setContentView(R.layout.activity_publicar_viaje);
 
         btnIngresar3 = findViewById(R.id.btnIngresar3);
-        Dia= findViewById(R.id.dia);
+        Dia= findViewById(R.id.email);
         Hora = findViewById(R.id.hora);
 
         btnIngresar3.setOnClickListener(new View.OnClickListener() {
