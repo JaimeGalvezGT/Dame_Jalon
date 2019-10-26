@@ -42,7 +42,7 @@ public class verJalones extends AppCompatActivity {
 
     public Connection conexionBD(){
         Connection conexion = null;
-        String host = "172.24.5.71";
+        String host = "172.24.5.14";
         String port = "3306";
         String dbName = "damejalon";
         String userName = "root";

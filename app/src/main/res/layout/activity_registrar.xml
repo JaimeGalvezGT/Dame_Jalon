@@ -133,7 +133,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.586" />
 
                 <EditText
                     android:id="@+id/ediTextTelefono"
@@ -150,7 +151,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.593" />
+                    app:layout_constraintVertical_bias="0.676" />
 
                 <Button
                     android:id="@+id/btnIngresar2"
@@ -164,7 +165,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.769" />
+                    app:layout_constraintVertical_bias="0.853" />
             </android.support.constraint.ConstraintLayout>
         </LinearLayout>
     </ScrollView>

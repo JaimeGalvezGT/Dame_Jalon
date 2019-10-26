@@ -18,7 +18,6 @@
         <activity android:name=".verJalones" />
         <activity android:name=".perfil" />
         <activity android:name=".contactar" />
-        <activity android:name=".viajar" />
         <activity android:name=".publicar_viaje" />
         <activity android:name=".registrar" />
         <activity android:name=".recuperar" />

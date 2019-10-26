@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0D2940"
+    android:background="#367E31"
     tools:context=".publicar_viaje">
 
     <Button
@@ -75,18 +75,6 @@
         app:layout_constraintVertical_bias="0.499" />
 
     <EditText
-        android:id="@+id/email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblTitulo4" />
-
-    <EditText
         android:id="@+id/hora"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -97,5 +85,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblTitulo5" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="208dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblTitulo4" />
 
 </android.support.constraint.ConstraintLayout>
