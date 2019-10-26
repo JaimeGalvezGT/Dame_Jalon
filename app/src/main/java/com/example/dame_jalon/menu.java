@@ -14,7 +14,7 @@ public class menu extends AppCompatActivity {
     ImageButton btnViaja;
     ImageButton btnContactar;
     ImageButton btnperfil;
-    ImageButton btnayuda;
+    ImageButton btnayuda, btnnotificaciones;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,7 @@ public class menu extends AppCompatActivity {
         btnContactar = findViewById(R.id.btnContactar);
         btnperfil = findViewById(R.id.perfil);
         btnayuda = findViewById(R.id.ayuda);
+        btnnotificaciones = findViewById(R.id.notificaciones);
 
         btnViaja.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +41,7 @@ public class menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent navegacion2 = new Intent(menu.this, verNotificaciones.class);
+                Intent navegacion2 = new Intent(menu.this, verJalones.class);
                 startActivity(navegacion2);
 
             }
@@ -62,6 +63,16 @@ public class menu extends AppCompatActivity {
 
                 Intent navegacion4 = new Intent(menu.this, contactar.class);
                 startActivity(navegacion4);
+
+            }
+        });
+
+        btnnotificaciones.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent navegacion5 = new Intent(menu.this, verNotificaciones.class);
+                startActivity(navegacion5);
 
             }
         });

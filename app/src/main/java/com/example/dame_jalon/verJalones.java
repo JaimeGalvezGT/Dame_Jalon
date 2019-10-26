@@ -42,7 +42,7 @@ public class verJalones extends AppCompatActivity {
 
     public Connection conexionBD(){
         Connection conexion = null;
-        String host = "192.168.1.27";
+        String host = "172.24.5.71";
         String port = "3306";
         String dbName = "damejalon";
         String userName = "root";
@@ -62,7 +62,7 @@ public class verJalones extends AppCompatActivity {
     private void cargarUsuarios(){
 
         try{
-            String sql = "SELECT jalon.idJalon, usuario.carne, usuario.nombre, usuario.apellido, usuario.direccion, usuario.telefono, jalon.Dia, jalon.Hora, jalon.estado FROM jalon, usuario WHERE jalon.carneJalon = usuario.carne and jalon.estado = 1";
+            String sql = "SELECT jalon.idJalon, usuario.carne, usuario.nombre, usuario.apellido, usuario.direccion, usuario.telefono, jalon.Dia, jalon.Hora, jalon.estado FROM jalon, usuario WHERE jalon.carneJalon = usuario.carne and jalon.estado = 1 AND usuario.carne!="+usuario.getCarne();
             st = conexionBD().createStatement();
             rs = st.executeQuery(sql);
             if(rs.first())
