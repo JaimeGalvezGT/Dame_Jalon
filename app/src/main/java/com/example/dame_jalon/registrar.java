@@ -48,10 +48,10 @@ public class registrar extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (editTextCarne.getText().toString().isEmpty() && editTextNombre.getText().toString().isEmpty() && editTextApellido.getText().toString().isEmpty() && editTextEmail.getText().toString().isEmpty() && editTextPassword.getText().toString().isEmpty() && editTextDireccion.getText().toString().isEmpty() && editTextDireccion.getText().toString().isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "Todos los campos vacÃ­os, por favor ingrese los datos requeridos", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Todos los campos vacíos, por favor ingrese los datos requeridos", Toast.LENGTH_LONG).show();
                 } else {
-                    AgregarRegistro();
                     editTextCarne.setText("");
+                    AgregarRegistro();
                     editTextNombre.setText("");
                     editTextApellido.setText("");
                     editTextEmail.setText("");
