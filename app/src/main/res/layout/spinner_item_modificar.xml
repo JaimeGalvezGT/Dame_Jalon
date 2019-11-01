@@ -5,6 +5,7 @@
     android:textSize="20sp"
     android:padding="8sp"
     android:textAlignment="center"
-    android:textColor="#0B2C7C"
+    android:textColor="#FDFDFE"
+    android:background="#202732"
     xmlns:android="http://schemas.android.com/apk/res/android" />
 

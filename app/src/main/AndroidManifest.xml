@@ -13,7 +13,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".verNotificaciones"></activity>
         <activity android:name=".verJalones" />
         <activity android:name=".perfil" />
@@ -22,7 +22,8 @@
         <activity android:name=".registrar" />
         <activity android:name=".recuperar" />
         <activity android:name=".menu" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:label="Dame Jalon">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

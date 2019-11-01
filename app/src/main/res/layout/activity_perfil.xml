@@ -9,48 +9,48 @@
 
     <TextView
         android:id="@+id/Nombre"
-        android:layout_width="182dp"
-        android:layout_height="51dp"
+        android:layout_width="304dp"
+        android:layout_height="58dp"
         android:text="JAIME ALEJANDRO GÁLVEZ AYALA"
         android:textAlignment="center"
         android:textColor="#FDFDFE"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.31" />
+        app:layout_constraintVertical_bias="0.292" />
 
     <TextView
         android:id="@+id/Direccion"
-        android:layout_width="224dp"
-        android:layout_height="55dp"
+        android:layout_width="304dp"
+        android:layout_height="58dp"
         android:text="3RA CALLE ZONA 4, TIQUISATE ESCUINTLA"
         android:textAlignment="center"
         android:textColor="#FDFDFE"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.458" />
+        app:layout_constraintVertical_bias="0.41" />
 
     <TextView
         android:id="@+id/telefono"
-        android:layout_width="224dp"
-        android:layout_height="55dp"
+        android:layout_width="304dp"
+        android:layout_height="58dp"
         android:text="3RA CALLE ZONA 4, TIQUISATE ESCUINTLA"
         android:textAlignment="center"
         android:textColor="#FDFDFE"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.624" />
+        app:layout_constraintVertical_bias="0.534" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -65,7 +65,7 @@
         app:srcCompat="@drawable/user" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnmodificar"
         android:layout_width="124dp"
         android:layout_height="53dp"
         android:text="MODIFICAR"
@@ -74,5 +74,5 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.811" />
+        app:layout_constraintVertical_bias="0.731" />
 </android.support.constraint.ConstraintLayout>

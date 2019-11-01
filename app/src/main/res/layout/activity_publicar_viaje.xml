@@ -18,15 +18,15 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="#FBFBFD"
-        android:text="@android:string/ok"
-        android:textColor="#020708"
+        android:text="PUBLICAR"
+        android:textColor="#202732"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.795" />
+        app:layout_constraintVertical_bias="0.836" />
 
     <TextView
         android:id="@+id/lblTitulo4"
@@ -74,25 +74,39 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.499" />
 
-    <EditText
-        android:id="@+id/hora"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblTitulo5" />
-
     <Spinner
         android:id="@+id/spinner1"
         android:layout_width="208dp"
         android:layout_height="47dp"
         android:layout_marginTop="28dp"
+        android:background="#202732"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblTitulo4" />
+
+    <Button
+        android:id="@+id/btnhora"
+        android:layout_width="122dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginRight="148dp"
+        android:background="#202732"
+        android:text="SELECCIONAR"
+        android:textColor="#FDFDFE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblTitulo5" />
+
+    <TextView
+        android:id="@+id/txtmhora"
+        android:layout_width="227dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="12dp"
+        android:textAlignment="center"
+        android:textColor="#FDFDFE"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnhora" />
 
 </android.support.constraint.ConstraintLayout>

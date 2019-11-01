@@ -1,9 +1,14 @@
 package com.example.dame_jalon;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.StrictMode;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +26,7 @@ public class perfil extends AppCompatActivity {
     private Statement st = null;
     private ResultSet rs = null;
     private usuario user = null;
+    Button btnmodificar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,16 +36,47 @@ public class perfil extends AppCompatActivity {
         nombre= findViewById(R.id.Nombre);
         direccion= findViewById(R.id.Direccion);
         telefono= findViewById(R.id.telefono);
+        btnmodificar = findViewById(R.id.btnmodificar);
 
         nombre.setText(usuario.getNombre()+" "+usuario.getApellido());
         direccion.setText(usuario.getDireccion());
         telefono.setText(usuario.getTelefono());
 
+
+        btnmodificar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                AlertDialog.Builder alerta = new AlertDialog.Builder(perfil.this);
+                alerta.setMessage("¿Desea modificar su información?")
+                        .setCancelable(false)
+                        .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                Intent intent = new Intent(perfil.this, recuperar.class);
+                                startActivity(intent);
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog titulo = alerta.create();
+                titulo.setTitle("Modificar Información");
+                titulo.show();
+
+            }
+        });
+
     }
 
     public Connection conexionBD(){
         Connection conexion = null;
-        String host = "172.24.5.14";
+        String host = "192.168.1.38";
         String port = "3306";
         String dbName = "damejalon";
         String userName = "root";

@@ -7,6 +7,40 @@
     android:background="#367E31"
     tools:context=".recuperar">
 
+    <EditText
+        android:id="@+id/editTextDirección2"
+        android:layout_width="315dp"
+        android:layout_height="51dp"
+        android:background="#EDEFF1"
+        android:ems="10"
+        android:hint=" Dirección"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="#202732"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31" />
+
+    <EditText
+        android:id="@+id/ediTextTelefono2"
+        android:layout_width="315dp"
+        android:layout_height="51dp"
+        android:background="#EDEFF1"
+        android:ems="10"
+        android:hint=" Celular"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="#202732"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.43" />
+
     <Button
         android:id="@+id/btnRecuperar"
         android:layout_width="131dp"
@@ -18,14 +52,14 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:background="#FBFBFD"
-        android:text="RECUPERAR"
+        android:text="ACTUALIZAR"
         android:textColor="#020708"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.578" />
 
     <TextView
         android:id="@+id/lblTitulo"
@@ -37,34 +71,17 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Escribe tu correo electronico"
+        android:text="Ingresa tu infomación"
         android:textAlignment="center"
         android:textColor="#FDFDFE"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.162" />
+        app:layout_constraintVertical_bias="0.074" />
 
-    <EditText
-        android:id="@+id/txtCorreoRecu"
-        android:layout_width="322dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="#FDFDFE"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.541"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblTitulo" />
 </android.support.constraint.ConstraintLayout>

@@ -1,7 +1,9 @@
 package com.example.dame_jalon;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.StrictMode;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,6 +22,7 @@ import java.util.List;
 public class AdaptadorVistaNotifiaciones extends RecyclerView.Adapter<AdaptadorVistaNotifiaciones.MyViewHolder>{
     private Context mycont;
     private List<notificacion> ListaNotificaciones;
+
 
     // Provide a suitable constructor (depends on the kind of dataset)
     public AdaptadorVistaNotifiaciones(Context mycont, List<notificacion> ListNotificaciones) {
@@ -50,6 +53,7 @@ public class AdaptadorVistaNotifiaciones extends RecyclerView.Adapter<AdaptadorV
             eliminar = itemView.findViewById(R.id.eliminar);
             idNoti = itemView.findViewById(R.id.idNoti);
 
+
         }
         void setOnClickListener(){
                 eliminar.setOnClickListener(this);
@@ -63,6 +67,7 @@ public class AdaptadorVistaNotifiaciones extends RecyclerView.Adapter<AdaptadorV
                 pst.executeUpdate();
 
                 Toast.makeText(cont,"Notificacion Eliminada",Toast.LENGTH_SHORT).show();
+
             }catch (Exception e) {
                 Toast.makeText(cont,e.getMessage(),Toast.LENGTH_SHORT).show();
             }
@@ -95,7 +100,7 @@ public class AdaptadorVistaNotifiaciones extends RecyclerView.Adapter<AdaptadorV
     }
     public static Connection conexionBD(){
         Connection conexion = null;
-        String host = "172.24.5.71";
+        String host = "192.168.1.38";
         String port = "3306";
         String dbName = "damejalon";
         String userName = "root";

@@ -97,26 +97,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.087" />
 
-    <TextView
-        android:id="@+id/txtRecuperar"
-        android:layout_width="157dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="Recuperar Contraseña"
-        android:textAlignment="center"
-        android:textColor="#FDFDFE"
-        android:textSize="13sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.033"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
-        app:layout_constraintVertical_bias="0.317" />
-
     <Button
         android:id="@+id/button3"
         android:layout_width="332dp"

@@ -42,7 +42,7 @@ public class verNotificaciones extends AppCompatActivity {
 
     public Connection conexionBD(){
         Connection conexion = null;
-        String host = "172.24.5.14";
+        String host = "192.168.1.38";
         String port = "3306";
         String dbName = "damejalon";
         String userName = "root";
@@ -62,7 +62,7 @@ public class verNotificaciones extends AppCompatActivity {
     private void cargarNotificaciones(){
 
         try{
-            String sql = "SELECT notificacion.idNotificacion, notificacion.carneReceptor, usuario.nombre, usuario.apellido, usuario.email, usuario.telefono, notificacion.carneCreador, notificacion.estado FROM notificacion, usuario WHERE  notificacion.carneCreador = usuario.carne AND notificacion.estado = 1 AND notificacion.carneReceptor ="+usuario.getCarne();
+            String sql = "SELECT notificacion.idNotificacion, notificacion.carneReceptor, usuario.nombre, usuario.apellido, usuario.email, usuario.telefono, notificacion.carneCreador, notificacion.estado FROM notificacion, usuario WHERE  notificacion.carneCreador = usuario.carne AND notificacion.estado = 1 AND notificacion.carneReceptor="+usuario.getCarne();
             st = conexionBD().createStatement();
             rs = st.executeQuery(sql);
             if(rs.first())
