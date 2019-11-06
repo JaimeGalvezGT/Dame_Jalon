@@ -37,7 +37,6 @@ public class publicar_viaje extends AppCompatActivity {
         btnHora = findViewById(R.id.btnhora);
         txtmHora = findViewById(R.id.txtmhora);
 
-        String [] opciones = {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"};
 
         ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this,R.array.combo_equipos,R.layout.spinner_item_modificar);
 
@@ -76,7 +75,7 @@ public class publicar_viaje extends AppCompatActivity {
 
     public Connection conexionBD(){
         Connection conexion = null;
-        String host = "192.168.1.38";
+        String host = "192.168.1.38";           //CAMBIAR
         String port = "3306";
         String dbName = "damejalon";
         String userName = "root";
@@ -99,8 +98,8 @@ public class publicar_viaje extends AppCompatActivity {
 
             PreparedStatement pst = conexionBD().prepareStatement("insert into jalon(carneJalon, dia, hora) values(" + usuario.getCarne() + ", '" + spinner.getSelectedItem().toString()+ "', '" + txtmHora.getText().toString() + "')");
             pst.executeUpdate();
-
             Toast.makeText(getApplicationContext(),"PEDISTE JALÓN EXITOSAMENTE",Toast.LENGTH_SHORT).show();
+            finish();
         }catch (Exception e) {
             Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT).show();
         }

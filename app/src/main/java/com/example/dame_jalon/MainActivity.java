@@ -1,8 +1,10 @@
 package com.example.dame_jalon;
 
         import android.content.Intent;
+        import android.support.design.widget.TextInputEditText;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
+        import android.util.Patterns;
         import android.view.View;
         import android.widget.Button;
         import android.widget.EditText;
@@ -13,8 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnIngresar;
     private EditText txtUsuario;
-    private EditText txtPassword;
-    private TextView txtRecuperar;
+    private TextInputEditText txtPassword;
     private Button button3;
 
     @Override
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         txtUsuario = findViewById(R.id.txtCorreo);
-        txtPassword = findViewById(R.id.txtPassword);
+        txtPassword = findViewById(R.id.txtPassword2);
         btnIngresar = findViewById(R.id.btnIngresar);
         button3 = findViewById(R.id.button3);
 
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
 
     //Funcion que establece la conexion con la base de datos y retorna un objeto de tipo usuario
     public usuario validarLogin(){

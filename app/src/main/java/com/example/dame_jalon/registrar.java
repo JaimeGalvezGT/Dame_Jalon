@@ -1,8 +1,10 @@
 package com.example.dame_jalon;
 
 import android.os.StrictMode;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +26,7 @@ public class registrar extends AppCompatActivity {
     EditText editTextNombre;
     EditText editTextApellido;
     EditText editTextEmail;
-    EditText editTextPassword;
+    TextInputEditText editTextPassword;
     EditText editTextDireccion;
     EditText editTextTelefono;
     private Connection conn;
@@ -39,26 +41,27 @@ public class registrar extends AppCompatActivity {
         editTextNombre = findViewById(R.id.editTextNombre2);
         editTextApellido = findViewById(R.id.editTextApellido2);
         editTextEmail = findViewById(R.id.editTextEmail2);
-        editTextPassword = findViewById(R.id.txtPassword4);
+        editTextPassword = findViewById(R.id.txtPassword5);
         editTextDireccion = findViewById(R.id.editTextDirección);
         editTextTelefono = findViewById(R.id.ediTextTelefono);
         btnIngresar2 = findViewById(R.id.btnIngresar2);
 
+
         btnIngresar2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (editTextCarne.getText().toString().isEmpty() && editTextNombre.getText().toString().isEmpty() && editTextApellido.getText().toString().isEmpty() && editTextEmail.getText().toString().isEmpty() && editTextPassword.getText().toString().isEmpty() && editTextDireccion.getText().toString().isEmpty() && editTextDireccion.getText().toString().isEmpty()) {
                     Toast.makeText(getApplicationContext(), "Todos los campos vacíos, por favor ingrese los datos requeridos", Toast.LENGTH_LONG).show();
                 } else {
-                    editTextCarne.setText("");
                     AgregarRegistro();
+                    editTextCarne.setText("");
                     editTextNombre.setText("");
                     editTextApellido.setText("");
                     editTextEmail.setText("");
                     editTextPassword.setText("");
                     editTextDireccion.setText("");
                     editTextTelefono.setText("");
-
 
                 }
 
@@ -69,7 +72,7 @@ public class registrar extends AppCompatActivity {
     }
     public Connection conexionBD(){
         Connection conexion = null;
-        String host = "192.168.1.38";
+        String host = "192.168.1.38";               //CAMBIAR
         String port = "3306";
         String dbName = "damejalon";
         String userName = "root";
@@ -86,6 +89,8 @@ public class registrar extends AppCompatActivity {
         }
         return conexion;
     }
+
+
 
 
     public void AgregarRegistro(){

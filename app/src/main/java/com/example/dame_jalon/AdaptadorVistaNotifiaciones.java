@@ -1,5 +1,6 @@
 package com.example.dame_jalon;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.StrictMode;
@@ -65,7 +66,6 @@ public class AdaptadorVistaNotifiaciones extends RecyclerView.Adapter<AdaptadorV
 
                 PreparedStatement pst = conexionBD().prepareStatement("UPDATE notificacion SET estado='2' WHERE idNotificacion="+Integer.parseInt(idNoti.getText().toString()));
                 pst.executeUpdate();
-
                 Toast.makeText(cont,"Notificacion Eliminada",Toast.LENGTH_SHORT).show();
 
             }catch (Exception e) {
@@ -89,8 +89,6 @@ public class AdaptadorVistaNotifiaciones extends RecyclerView.Adapter<AdaptadorV
     public void onBindViewHolder(MyViewHolder holder, int position) {
         notificacion noti = ListaNotificaciones.get(position);
 
-        //cargamos la imagen
-
         holder.nombre.setText(noti.getNombreCreador()+noti.getApellidoCreador());
         holder.telefono.setText(noti.getTelefono());
         holder.email.setText(noti.getEmail());
@@ -98,9 +96,10 @@ public class AdaptadorVistaNotifiaciones extends RecyclerView.Adapter<AdaptadorV
         holder.setOnClickListener();
 
     }
+
     public static Connection conexionBD(){
         Connection conexion = null;
-        String host = "192.168.1.38";
+        String host = "192.168.1.38";       //CAMBIAR
         String port = "3306";
         String dbName = "damejalon";
         String userName = "root";

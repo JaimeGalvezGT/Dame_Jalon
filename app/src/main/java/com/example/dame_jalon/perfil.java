@@ -38,9 +38,11 @@ public class perfil extends AppCompatActivity {
         telefono= findViewById(R.id.telefono);
         btnmodificar = findViewById(R.id.btnmodificar);
 
-        nombre.setText(usuario.getNombre()+" "+usuario.getApellido());
+        /*nombre.setText(usuario.getNombre()+" "+usuario.getApellido());
         direccion.setText(usuario.getDireccion());
-        telefono.setText(usuario.getTelefono());
+        telefono.setText(usuario.getTelefono());*/
+
+        this.CargarDatos();
 
 
         btnmodificar.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +58,7 @@ public class perfil extends AppCompatActivity {
 
                                 Intent intent = new Intent(perfil.this, recuperar.class);
                                 startActivity(intent);
+                                finish();
                             }
                         })
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -76,7 +79,7 @@ public class perfil extends AppCompatActivity {
 
     public Connection conexionBD(){
         Connection conexion = null;
-        String host = "192.168.1.38";
+        String host = "192.168.1.38";               //CAMBIAR
         String port = "3306";
         String dbName = "damejalon";
         String userName = "root";
@@ -94,7 +97,7 @@ public class perfil extends AppCompatActivity {
         return conexion;
     }
 
-    /**public void CargarDatos(){
+    public void CargarDatos(){
         try{
             String sql = "select * from usuario where carne="+usuario.getCarne()+"";
             st = conexionBD().createStatement();
@@ -119,9 +122,11 @@ public class perfil extends AppCompatActivity {
 
             nombre.setText(user.getNombre()+" "+user.getApellido());
             direccion.setText(user.getDireccion());
-            telefono.setText(user.getTelefono());
+     telefono.setText(user.getTelefono());
         } catch (SQLException ex) {
             Log.d("Error", ex.getMessage());
         }
-    }**/
+    }
+
+
 }

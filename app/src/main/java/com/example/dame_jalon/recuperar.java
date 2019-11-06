@@ -1,6 +1,7 @@
 package com.example.dame_jalon;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -40,7 +41,7 @@ public class recuperar extends AppCompatActivity {
     }
     public static Connection conexionBD(){
         Connection conexion = null;
-        String host = "192.168.1.38";
+        String host = "192.168.1.38";           //CAMBIAR
         String port = "3306";
         String dbName = "damejalon";
         String userName = "root";
@@ -60,14 +61,14 @@ public class recuperar extends AppCompatActivity {
     public void Actualizar(){
         try {
 
-            PreparedStatement pst = conexionBD().prepareStatement("UPDATE usuario SET direccion='" + editTextDirección2.getText().toString() + "', telefono=+"+Integer.parseInt(ediTextTelefono2.getText().toString())+"WHERE carne="+usuario.getCarne());
+            PreparedStatement pst = conexionBD().prepareStatement("UPDATE usuario SET direccion='" + editTextDirección2.getText().toString() + "', telefono="+Integer.parseInt(ediTextTelefono2.getText().toString())+" WHERE carne="+usuario.getCarne());
             pst.executeUpdate();
-            Toast.makeText(recuperar.this, "SI SE PUDO", Toast.LENGTH_LONG).show();
-
+            Toast.makeText(recuperar.this, "MODIFICACIÓN EXITOSA", Toast.LENGTH_LONG).show();
+            finish();
 
         }catch (Exception e) {
 
-            Toast.makeText(recuperar.this, "NO SE PUDO", Toast.LENGTH_LONG).show();
+            Toast.makeText(recuperar.this, "MODIFICACIÓN FALLIDA", Toast.LENGTH_LONG).show();
         }
     }
 

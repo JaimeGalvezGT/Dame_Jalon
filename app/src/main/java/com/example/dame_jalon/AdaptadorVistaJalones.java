@@ -100,7 +100,7 @@ class AdaptadorVistaJalones extends RecyclerView.Adapter<AdaptadorVistaJalones.M
     }
     public static Connection conexionBD(){
         Connection conexion = null;
-        String host = "192.168.1.38";
+        String host = "192.168.1.38";       //CAMBIAR
         String port = "3306";
         String dbName = "damejalon";
         String userName = "root";
