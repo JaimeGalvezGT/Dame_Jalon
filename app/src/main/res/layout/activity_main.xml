@@ -120,8 +120,6 @@
             android:hint="Password"
             android:inputType="textPassword"
             android:textColor="#202732"
-            android:textColorHint="#367E31"
-            android:textColorLink="#367E31"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/txtCorreo"
             app:layout_constraintEnd_toEndOf="parent"

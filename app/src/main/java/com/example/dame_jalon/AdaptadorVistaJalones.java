@@ -2,7 +2,9 @@ package com.example.dame_jalon;
 
 import android.app.IntentService;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.StrictMode;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 class AdaptadorVistaJalones extends RecyclerView.Adapter<AdaptadorVistaJalones.MyViewHolder> {
@@ -57,15 +60,37 @@ class AdaptadorVistaJalones extends RecyclerView.Adapter<AdaptadorVistaJalones.M
 
         @Override
         public void onClick(View view) {
-            try {
+            AlertDialog.Builder alerta = new AlertDialog.Builder(cont);
+            alerta.setMessage("¿Deseas Darle Jalón a esta persona?")
+                    .setCancelable(false)
+                    .setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
 
-                PreparedStatement pst = conexionBD().prepareStatement("INSERT INTO notificacion (carneReceptor, carneCreador) VALUES ("+ Integer.parseInt(carne.getText().toString())+", "+usuario.getCarne()+")");
-                pst.executeUpdate();
+                            try {
 
-                Toast.makeText(cont,"Se le notificara a tu amigo",Toast.LENGTH_SHORT).show();
-            }catch (Exception e) {
-                Toast.makeText(cont,e.getMessage(),Toast.LENGTH_SHORT).show();
-            }
+                                PreparedStatement pst = conexionBD().prepareStatement("INSERT INTO notificacion (carneReceptor, carneCreador) VALUES ("+ Integer.parseInt(carne.getText().toString())+", "+usuario.getCarne()+")");
+                                pst.executeUpdate();
+
+                                Toast.makeText(cont,"Se le notificara a tu amigo",Toast.LENGTH_SHORT).show();
+                                ((verJalones)cont).finish();
+                            }catch (Exception e) {
+                                Toast.makeText(cont,e.getMessage(),Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+                    })
+                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+
+            AlertDialog titulo = alerta.create();
+            titulo.setTitle("DAR JALÓN");
+            titulo.show();
+
         }
 
     }

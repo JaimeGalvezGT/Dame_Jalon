@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
                     Intent navegacion = new Intent(MainActivity.this, menu.class);
                     usuario user = validarLogin();
+                    finish();
 
                     if (user != null) {
                         if (user.getFK_estado() == 0) {
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(navegacion);
                         } else if (user.getFK_rol() == 2 && user.getFK_estado() == 1) {
                             startActivity(navegacion);
+
                         }
                     } else {
                         Toast.makeText(MainActivity.this, "Usuario y/o contraseña incorrectos", Toast.LENGTH_LONG).show();
